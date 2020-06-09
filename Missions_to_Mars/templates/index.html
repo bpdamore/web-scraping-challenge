@@ -5,62 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scraping Mars</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="background-color: #f5f6faf1;">
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center" style="background-color: #e1d7db;">
             <h1>Mission to Mars!</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scraper" role="button">Refresh this info!</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/scraper" role="button">Scrape New Data</a></p>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2>Scrape New Data</h2>
+                <h2>Latest News</h2>
                 <h4 class="heading">{{ mars_scrape.news_title }}</h4>
-                <small>{{ mars_scrape.news_p }}</small>
+                <p>{{ mars_scrape.news_p }}</p>
             </div>
         </div>
+        <hr class="line">
         <div class="row">
             <div class="col-sm-8 text-center">
                 <h2>Latest Mars Image</h2>
                 <img src="{{mars_scrape.featured_image_url}}" alt="Featured Image" height="400px" width="600px">
             </div>
             <div class="col-sm-4">
-                <h4>Current weather on Mars</h4>
-                <small>{{mars_scrape.mars_weather}}</small>
+                <h2>Current weather on Mars</h2>
+                <p>{{ mars_scrape.mars_weather }}</p>
             </div>
             <div class="col-sm-4">
-                <h4>Mars Facts</h4>
-                <p>{{mars_scrape.mars_info_table | safe}}</p>
+                <h2>Mars Facts</h2>
+                <p class="table">{{ mars_scrape.mars_info_table | safe }}</p>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-sm-12 text-center">
                 <h2>Mars Hemispheres</h2>
+                </br>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto text-center">
-                <img class="img-responsive" src="{{mars_scrape.hemisphere_image_urls[0]['image_url']}}" height="300px" width="300px">
-                <h4 class="box_titling"><b>{{mars_scrape.hemisphere_image_urls[0]["title"]}}</b></h4>
+                <img class="imgs" src="{{mars_scrape.hemisphere_image_urls[0]['image_url']}}" height="300px" width="300px">
+                <h4 class="box_titling"><b>{{ mars_scrape.hemisphere_image_urls[0]["title"] }}</b></h4>
             </div>
             <div class="col-md-6 mx-auto text-center">
-                <img class="img-responsive" src="{{mars_scrape.hemisphere_image_urls[1]['image_url']}}" height="300px" width="300px">
-                <h4 class="box_titling"><b>{{mars_scrape.hemisphere_image_urls[1]["title"]}}</b></h4>
+                <img class="imgs" src="{{mars_scrape.hemisphere_image_urls[1]['image_url']}}" height="300px" width="300px">
+                <h4 class="box_titling"><b>{{ mars_scrape.hemisphere_image_urls[1]["title"] }}</b></h4>
             </div>
         </div>
+        </br>
         <div class="row">
             <div class="col-md-6 mx-auto text-center">
-                <img class="img-responsive" src="{{mars_scrape.hemisphere_image_urls[2]['image_url']}}" height="300px" width="300px">
-                <h4 class="box_titling"><b>{{mars_scrape.hemisphere_image_urls[2]["title"]}}</b></h4>
+                <img class="imgs" src="{{mars_scrape.hemisphere_image_urls[2]['image_url']}}" height="300px" width="300px">
+                <h4 class="box_titling"><b>{{ mars_scrape.hemisphere_image_urls[2]["title"] }}</b></h4>
             </div>
             <div class="col-md-6 mx-auto text-center">
-                <img class="img-responsive" src="{{mars_scrape.hemisphere_image_urls[3]['image_url']}}" height="300px" width="300px">
-                <h4 class="box_titling"><b>{{mars_scrape.hemisphere_image_urls[3]["title"]}}</b></h4>
+                <img class="imgs" src="{{mars_scrape.hemisphere_image_urls[3]['image_url']}}" height="300px" width="300px">
+                <h4 class="box_titling"><b>{{ mars_scrape.hemisphere_image_urls[3]["title"] }}</b></h4>
             </div>
-        </div>
-
         </div>
     </div>
 </body>
